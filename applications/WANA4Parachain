@@ -4,22 +4,23 @@
 >
 > See the [Open Grants Program Process](https://github.com/w3f/Open-Grants-Program/#pencil-process) on how to submit a proposal.
 
-* **Project Name:** Name of your project (e.g. DuoSwap Module)
-* **Team Name:** Legal name of your team (e.g. Duo)
-* **Payment Address:** BTC or Ethereum (DAI) payment address. We don't accept payments for the program in other currencies at this stage. (e.g. 123mp123...)
+* **Project Name:** WANA4Parachain：An symbolic execution engine for detecting bugs in parachains
+* **Team Name:** WANA
+* **Payment Address:** 1NbKV2UVispBLNVktYVYcUFFZujRwrFVRy
 
 
 > ⚠️ *The combination of your GitHub account submitting the application and the payment address above will be your unique identifier during the program. Please keep them safe.*
 
 ## Project Overview :page_facing_up:
 
-If this application is in response to an RFP, please indicate this on the first line of this section.
-
-If this is an application for a follow-up grant (the continuation of an earlier, successful W3F grant), please provide name and/or pull request of said grant on the first line of this section.
 
 ### Overview
 
-Please provide the following:
+WANA4Parachain aims at building an verification tool for detecting bugs and exceptions in parachains within polkadot ecosystem based on the symbolic execution of Wasm bytecode. 
+
+The Substrate framework provides powerful building blocks to build a customized parachain. With the rapid growth the Polkadot ecosystem, the number of active parachains connected to the relay chain platform will also increase dramatically. As a result, the correctness and the security of the parachains are crucial to the correctness and security of the whole polkadot ecosystem. Due to the large number of parachains, it would be desirable to have practical tools to automatically verify the correctness and the security of them. 
+
+In substrate, all parachain code will be compiled into Wasm bytecode for execution. Therefore, the Wasm bytecode provides an uniform interface for verifying the correctness and security of parachains. In our previous work, we have built the WANA (https://github.com/gongbell/WANA), a Wasm bytecode symbolic execution engine to verify EOSIO and Ethereum smart contracts. WANA can perform symbolic execution on any Wasm module to traverse each reachable path to detect the existence of bugs or vulnerabilities. We have successfully detected the bugs or security vulnerabilities in EOSIO and Ethereum smart contracts. In this project, we aims at extending WANA to support the verification of parachain code.
 
 * If the name of your project is not descriptive, a tag line (one sentence summary).
 * A brief description of your project.
