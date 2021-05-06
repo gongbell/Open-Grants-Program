@@ -44,14 +44,15 @@ Help us locate your project in the Polkadot/Substrate/Kusama landscape and what 
 
 ### Team members
 
-* Name of team leader
-* Names of team members 
+* Bo Jiang (team leader)
+* Yifei Chen (team member)
+* Bingqing Xue (team member) 
 
 ### Contact
 
-* **Contact Name:** Full name of the contact person in your team
-* **Contact Email:** Contact email (e.g. john@duo.com)
-* **Website:**
+* **Contact Name:** Bo Jiang
+* **Contact Email:** Contact email (e.g. gongbell@gmail.com)
+* **Website:** http://jiangbo.buaa.edu.cn
 
 ### Legal Structure
 
