@@ -38,7 +38,7 @@ We expect the teams to already have a solid idea about your project's expected f
 * What need(s) does your project meet?
   * Our projects address the parachain bug and vulnerability detection problem.
 * Are there any other projects similar to yours in the Substrate / Polkadot / Kusama ecosystem?
-  * I am not aware of any projects working on parachain security verification. There are indeed projects on smart contract verification, such as Oyente (https://github.com/enzymefinance/oyente) and MAIAN (https://github.com/ivicanikolicsg/MAIAN). 
+  * I am not aware of any projects working on parachain security verification. Because Polkadot is first ecosystem that realize a uniform parachain development model. There are indeed projects on smart contract verification, such as Oyente (https://github.com/enzymefinance/oyente) and MAIAN (https://github.com/ivicanikolicsg/MAIAN). 
 
 ## Team :busts_in_silhouette:
 
