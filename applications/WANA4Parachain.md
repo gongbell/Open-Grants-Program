@@ -14,12 +14,8 @@ WANA4Parachain aims at building an verification tool for detecting bugs and exce
 
 The Substrate framework provides powerful building blocks to build a customized parachain. With the rapid growth the Polkadot ecosystem, the number of active parachains connected to the relay chain platform will also increase dramatically. As a result, the correctness and the security of the parachains are crucial to the correctness and security of the whole polkadot ecosystem. Due to the large number of parachains, it would be desirable to have practical tools to automatically verify the correctness and the security of them. 
 
-In substrate, all parachain code will be compiled into Wasm bytecode for execution. Therefore, the Wasm bytecode provides an uniform interface for verifying the correctness and security of parachains. In our previous work, we have built the WANA (https://github.com/gongbell/WANA), a Wasm bytecode symbolic execution engine to verify EOSIO and Ethereum smart contracts. WANA can perform symbolic execution on any Wasm module to traverse each reachable path to detect the existence of bugs or vulnerabilities. We have successfully detected the bugs or security vulnerabilities in EOSIO and Ethereum smart contracts. In this project, we aims at extending WANA to support the verification of parachain code.
+In substrate, all parachain code will be compiled into Wasm bytecode for execution. Therefore, the Wasm bytecode provides an uniform interface for verifying the correctness and security of parachains. In our previous work, we have built the WANA (https://github.com/gongbell/WANA), a Wasm bytecode symbolic execution engine to verify EOSIO and Ethereum smart contracts. WANA can perform symbolic execution on any Wasm module to traverse each reachable path to detect the existence of bugs or vulnerabilities. We have successfully detected the bugs or security vulnerabilities in EOSIO and Ethereum smart contracts. In this project, we aims at extending WANA to support the verification of parachain code. In general, we want to extend WANA to verify Wasm modules of both smart contracts and blockchain code. Moreover, we would be happy if WANA can be extended to detection parachain bugs or vulnerabilities. 
 
-* If the name of your project is not descriptive, a tag line (one sentence summary).
-* A brief description of your project.
-* An indication of how your project relates to / integrates into Substrate / Polkadot / Kusama.
-* An indication of why your team is interested in creating this project.
 
 ### Project Details
 
