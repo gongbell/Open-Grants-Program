@@ -67,8 +67,10 @@ If anyone on your team has applied for a grant at the Web3 Foundation previously
 
 ### Team Code Repos
 
-* https://github.com/<your_repo_1>
-* https://github.com/<your_repo_2>
+* https://github.com/gongbell/ContractFuzzer
+* https://github.com/gongbell/EOSFuzzer
+* https://github.com/gongbell/WANA
+* https://github.com/gongbell/Artemis
 
 ### Team LinkedIn Profiles
 
