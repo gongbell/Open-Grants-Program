@@ -75,7 +75,7 @@ If anyone on your team has applied for a grant at the Web3 Foundation previously
 ### Team LinkedIn Profiles
 
 * https://www.linkedin.com/<person_1>
-* https://www.linkedin.com/<person_2>
+* https://www.linkedin.com/in/bo-jiang-b0951614
 
 ## Development Status :open_book:
 
