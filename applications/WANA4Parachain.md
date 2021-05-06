@@ -32,11 +32,11 @@ We expect the teams to already have a solid idea about your project's expected f
 ### Ecosystem Fit
 
 * Where and how does your project fit into the ecosystem?
-The project can help automatically verify the parachains in the ecosystem. It can detect bugs and vulnerabilities within the parachains.
+ *The project can help automatically verify the parachains in the ecosystem. It can detect bugs and vulnerabilities within the parachains.
 * Who is your target audience (parachain/dapp/wallet/UI developers, designers, your own user base, some dapp's userbase, yourself)?
-The target audience of the project can be either parachain developers or parachain auditors. With our tool, the parachain developers can verify the parachain implementations for potential bugs or vulnerabilities. And the parachain auditors can use the tool to help audit the parachains for bugs and vulnerabilities before launching them on Polkadot.
-
+ * The target audience of the project can be either parachain developers or parachain auditors. With our tool, the parachain developers can verify the parachain implementations for potential bugs or vulnerabilities. And the parachain auditors can use the tool to help audit the parachains for bugs and vulnerabilities before launching them on Polkadot.
 * What need(s) does your project meet?
+ * Our projects address the parachain bug and vulnerability detection problem.
 * Are there any other projects similar to yours in the Substrate / Polkadot / Kusama ecosystem?
   * I am not aware of any projects working on parachain security verification. There are indeed projects on smart contract verification, such as Oyente (https://github.com/enzymefinance/oyente) and MAIAN (https://github.com/ivicanikolicsg/MAIAN). 
 
