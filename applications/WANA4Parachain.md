@@ -34,26 +34,25 @@ In general, the Symbolic Execution engine of WANA4Parachain is reused from our p
 
 WebAssembly programs are organized into modules, which are the units of deployment, loading, and compilation. The parachain source code are also compiled into Wasm modules for deployment. During the loading and initialization phase, the symbolic execution engine will prepare the memories, tables, global variables and a stack as the execution environment for executing the Wasm instructions within a module. For a module, the exports component defines a set of exported functions and data structures that become accessible to the host environment once the module has been instantiated. In other words, the exported functions serve as the public interfaces for a Wasm module. Therefore, the WANA4Parachain framework will start the symbolic execution by iterating each exported function for different parachains. 
 
-For each Wasm function invocation within the instructions in a module, WANA will first prepare a frame as its execution context, which includes arguments, local variables, return values, and references to its module. Then WANA will start symbolically executing the instructions within the code section of the function sequentially. The Wasm instructions mainly include the numeric instructions, memory instructions, control instructions, and function call instructions. WANA has realized 171 out of the 185 instructions in WebAssembly specification version 1.0. 
+For each Wasm function invocation within the instructions in a module, WANA4Parachain will first prepare a frame as its execution context, which includes arguments, local variables, return values, and references to its module. Then WANA4Parachain will start symbolically executing the instructions within the code section of the function sequentially. The Wasm instructions mainly include the numeric instructions, memory instructions, control instructions, and function call instructions. WANA4Parachain has realized 171 out of the 185 instructions in WebAssembly specification version 1.0. 
 
 
 2. **Handling Functions**  
-In Wasm, there are two types of function calls: direct function calls and indirect function calls. For indirect function calls, Wasm VM has to first get an index from the top of the stack. Then the VM will use the index to get the real function address from a function table. For the functions in the current Wasm module, WANA will directly step into the functions to continue symbolic execution. For the library functions of parachain platform, WANA will emulate their behaviors in terms of their impact on symbolic execution, which we discuss in section below. 
 
-3. **Workflow Composer**  
-Workflow composer consists of an async Rust library to compose multiple triggers, deployment configuration generator, and whisk deployment tool. For creating the workflow, the only input is the configuration file which is a YAML file. The workflow composition is laid out in the YAML which in turn takes care of the deployment and composing the triggers. Once a workflow is deployed to a namespace it creates a specific topic unique workflow id in Kafka. Workflow configuration comprises the input URL of workflow tasks, primarily GitHub repo, the sequence of processing tasks, and argument structure. Arguments must match the task input parameters.  
+In Wasm, there are two types of function calls: direct function calls and indirect function calls. For indirect function calls, Wasm VM has to first get an index from the top of the stack. Then the VM will use the index to get the real function address from a function table. For the functions in the current Wasm module, WANA4Parachain will directly step into the functions to continue symbolic execution. For the library functions of parachain platform, WANA4Parachain will emulate their behaviors in terms of their impact on symbolic execution. 
 
-4. **Web API Gateway and Backend Service**   
-This is the end user facing component to utilize the workflow. This component comprises of a backend application which is responsible for user registration, selecting the workflow, managing / creating workflow using friendly APIs, providing input parameters. API gateway / Machine gateway where the external world can connect to the Aurras system.  
+This is where WANA4Parachain will extend WANA for parachain libraries. For output related functions, they have no impact on the control flow or data flow of symbolic execution. Therefore, WANA4Parachain will just pop-up their arguments from the stack and continue execution. For input related functions, returned the values from these input-related functions may impact execution path. WANA4Parachain will return new symbolic values from them to continue symbolic execution. For memory or variable manipulation functions, WANA4Parachain will perform symbolic execution on them to generate function summaries and reuse the summaries for compositional symbolic execution.
 
+3. **Bug Detection Algorithm**  
+The current projects mainly aims at detecting crash bugs and exceptions in parachain code. This is also where WANA4Parachain will extend WANA to detect bugs related to parachain. WANA4Parachain will incorporate the exception/crash reporting mechaism of parachain code into the symbolic execution engine. When exception or crash happens during symbolic execution, WANA4Parachain will report it accordingly. 
 
-* Mockups/designs of any UI components
-* Data models / API specifications of the core functionality
-* An overview of the technology stack to be used
-* Documentation of core components, protocols, architecture, etc. to be deployed
+4. **CLI interface**   
+This is the end user interface to use the tool. We will package the WANA4Parachain tool as a CLI interface for use with parachain source code projects or parachain bytecode. 
+
 * PoC/MVP or other relevant prior work or research on the topic
+  * The WANA project is our proof of work project on smart contract vulnerability analysis based on the same Wasm symbolic execution engine.
 * What your project is _not_ or will _not_ provide or implement
-  * This is a place for you to manage expectations and to clarify any limitations that might not be obvious
+  * At the current stage of polkadot/substrate ecosystem, the security vulnerabilities of the parachain code or polkadot smart contracts are still at their infancy. It is hard to analyze their features for security analysis right now. We expect the security vulnerabilities with parachain code or polkadot smart contracts will increase with the rapid growth of polkadot ecosystem. We may support the security vulnerabilitiy detection of parachain code or polkadot smart contracts in follow-up grants applications. 
 
 ### Ecosystem Fit
 
