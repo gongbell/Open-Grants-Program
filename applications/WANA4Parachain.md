@@ -28,9 +28,12 @@ The architecture of WANA4Parachain is shown in the figure below. First, the Polk
 
 
 #### Components
-1. **The Wasm Symbolic Execution Engine**  
+1. **The Wasm Symbolic Execution Engine** 
+ 
 In general, the Symbolic Execution engine of WANA4Parachain is reused from our previous research work WANA (https://github.com/gongbell/WANA). The Symbolic Execution engine is implemented as a new virtual machine that can consume both concrete and symbolic inputs according to WASM specification. Wasm supports 4 data types, including two integer data types and two floating-point data types under IEEE 754 standard. The  symbolic execution engine supports all of them for analysis. 
+
 WebAssembly programs are organized into modules, which are the units of deployment, loading, and compilation. The parachain source code are also compiled into Wasm modules for deployment. During the loading and initialization phase, the symbolic execution engine will prepare the memories, tables, global variables and a stack as the execution environment for executing the Wasm instructions within a module. For a module, the exports component defines a set of exported functions and data structures that become accessible to the host environment once the module has been instantiated. In other words, the exported functions serve as the public interfaces for a Wasm module. Therefore, the WANA4Parachain framework will start the symbolic execution by iterating each exported function for different parachains. 
+
 For each Wasm function invocation within the instructions in a module, WANA will first prepare a frame as its execution context, which includes arguments, local variables, return values, and references to its module. Then WANA will start symbolically executing the instructions within the code section of the function sequentially. The Wasm instructions mainly include the numeric instructions, memory instructions, control instructions, and function call instructions. WANA has realized 171 out of the 185 instructions in WebAssembly specification version 1.0. 
 
 
