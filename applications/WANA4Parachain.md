@@ -52,7 +52,7 @@ The architecture of WANA4Parachain is shown in the figure below. First, the Polk
     This is the end user interface to use the tool. We will package the WANA4Parachain tool as a CLI interface for use with parachain source code projects or parachain bytecode. 
 
 * PoC/MVP or other relevant prior work or research on the topic
-  * The WANA project is our proof of work project on smart contract vulnerability analysis based on the same Wasm symbolic execution engine.
+  * The WANA project (https://github.com/gongbell/WANA) is our proof of work project on smart contract vulnerability analysis based on the same Wasm symbolic execution engine.
 * What your project is _not_ or will _not_ provide or implement
   * At the current stage of polkadot/substrate ecosystem, the security vulnerabilities of the parachain code or polkadot smart contracts are still at their infancy. It is hard to analyze their features for security analysis right now. We expect the security vulnerabilities with parachain code or polkadot smart contracts will increase with the rapid growth of polkadot ecosystem. We may support the security vulnerabilitiy detection of parachain code or polkadot smart contracts in follow-up grants applications. 
 
