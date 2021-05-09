@@ -19,9 +19,11 @@ In substrate, all parachain code will be compiled into Wasm bytecode for executi
 
 ### Project Details
 
-We expect the teams to already have a solid idea about your project's expected final state. Therefore, we ask the teams to submit (where relevant):
 
 #### Architecture
+
+The architecture of WANA4Parachain is shown in the figure below. First, the Polkadot parachain source code can be compiled into Wasm bytecode, which is then loaded and initialized within the Wasm symbolic execution engine. As a result, the stack and memory of the symbolic execution engine are ready for execution. Second, the symbolic execution engine starts to traverse the paths of the Wasm code with symbolic inputs. During symbolic execution, the symbolic execution engine will invoke the Z3 constraint solver to check and prune unsatisfiable paths along the way. Meanwhile, the symbolic execution engine will also consult the library simulator when the Wasm bytecode is interacting with external functions. Then, the execution information useful for vulnerability analysis are collected during symbolic execution. Third, WANA4Parachain will perform bug or vulnerability analysis based on the execution information collected during the symbolic execution process. When a bug is detected, the corresponding report will be generated. Note that the step 2 and step 3 are iterative process, where the vulnerability analysis and symbolic execution will interleave with each other. The whole workflow ends when all the code has been traversed.
+
 ![](https://github.com/gongbell/MarkDownPics/blob/921ef6c480ad67fd84f5d6c940c276cb3bf681d7/WANA-Architecture.png)
 
 #### Technologies
