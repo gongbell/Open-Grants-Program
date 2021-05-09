@@ -37,7 +37,7 @@ WebAssembly programs are organized into modules, which are the units of deployme
 For each Wasm function invocation within the instructions in a module, WANA4Parachain will first prepare a frame as its execution context, which includes arguments, local variables, return values, and references to its module. Then WANA4Parachain will start symbolically executing the instructions within the code section of the function sequentially. The Wasm instructions mainly include the numeric instructions, memory instructions, control instructions, and function call instructions. WANA4Parachain has realized 171 out of the 185 instructions in WebAssembly specification version 1.0. 
 
 
-2. **Handling Functions**  
+2. **Handling Library Functions**  
 
 In Wasm, there are two types of function calls: direct function calls and indirect function calls. For indirect function calls, Wasm VM has to first get an index from the top of the stack. Then the VM will use the index to get the real function address from a function table. For the functions in the current Wasm module, WANA4Parachain will directly step into the functions to continue symbolic execution. For the library functions of parachain platform, WANA4Parachain will emulate their behaviors in terms of their impact on symbolic execution. 
 
